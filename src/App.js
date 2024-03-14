@@ -219,7 +219,7 @@ class App extends Component {
             <Menu onRouteChange={this.onRouteChange} />
           </div>
         ) : (
-          <div>
+          <div class="area-with-btn">
             <div className="game-area">
               <Snake snakeDots={snakeDots} />
               <Food dot={food} />
