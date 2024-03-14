@@ -5,6 +5,8 @@ import Button from "./Components/Button";
 import Menu from "./Components/Menu";
 import "./App.css";
 
+import Swal from 'sweetalert2';
+
 /* Get random food location
  */
 
@@ -154,7 +156,30 @@ class App extends Component {
   };
 
   gameOver() {
-    alert(`GAME OVER, your score is ${this.state.snakeDots.length - 2}`);
+    Swal.fire({
+      title: "GAME OVER",
+      showClass: {
+        popup: `
+          animate__animated
+          animate__fadeInUp
+          animate__faster
+        `
+      },
+      hideClass: {
+        popup: `
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        `
+      },
+      icon: "error",
+      text: `your score is ${this.state.snakeDots.length - 2}`,
+      confirmButtonText: "Restart Game",
+      cancelButtonText: "Exit",
+      showCancelButton: true,
+      showCloseButton: true
+    })
+    // alert(`GAME OVER, your score is ${this.state.snakeDots.length - 2}`);
     this.setState(initialState);
   }
 
