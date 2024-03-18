@@ -9,7 +9,7 @@ const Menu = ({ onRouteChange }) => {
           onClick={onRouteChange}
           className="start"
           type="button"
-          value="START GAME"
+          value="PLAY NOW"
         />
       </div>
     </div>
